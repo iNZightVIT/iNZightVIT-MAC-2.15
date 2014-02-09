@@ -7,8 +7,8 @@ export R_DIR="`dirname \"$0\"`"
 export R_PROFILE="$R_DIR/updateiNZightVIT.R"
 export DYLD_FALLBACK_FRAMEWORK_PATH="$R_DIR/Library"
 export DYLD_FRAMEWORK_PATH="$R_DIR/Library/Frameworks/R.framework"
-export DYLD_LIBRARY_PATH="$R_DIR/Library/Frameworks/R.framework/Versions/3.0/Resources/lib"
-export R_LIBRARIES="$R_DIR/Library/Frameworks/R.framework/Versions/3.0/Resources/library"
+export DYLD_LIBRARY_PATH="$R_DIR/Library/Frameworks/R.framework/Versions/2.15/Resources/lib"
+export R_LIBRARIES="$R_DIR/Library/Frameworks/R.framework/Versions/2.15/Resources/library"
 
 # Set the current directory to where R happens to be located,
 # allows us to set R's current working directory when loading R.

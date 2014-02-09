@@ -6,7 +6,7 @@ local({
   options(repos = r)
 })
 
-FP <- file.path("Library", "Frameworks", "R.framework", "Versions", "3.0", "Resources")
+FP <- file.path("Library", "Frameworks", "R.framework", "Versions", "2.15", "Resources")
 Sys.setenv("R_HOME" = file.path(getwd(), FP))
 .libPaths(file.path(getwd(), FP, "library"))
 
@@ -26,7 +26,7 @@ grid.newpage()
 splashImg <- readPNG(system.file("images", "inzightvit-splash.png",
                                  package = "vit"),
                      exists("rasterImage"))
-grid.raster(splashImg, width = unit(3.5, "inches"), height = unit(2, "inches"))  
+grid.raster(splashImg, width = unit(3.5, "inches"), height = unit(2, "inches"))
 
 
 message("(Dept. of Statistics, Uni. of Auckland)")
