@@ -12,4 +12,4 @@ export DYLD_LIBRARY_PATH="$R_DIR/Library/Frameworks/R.framework/Versions/2.15/Re
 # Set the current directory to where R happens to be located,
 # allows us to set R's current working directory when loading R.
 cd "$R_DIR"
-open -a "$R_DIR/R.app"
+open -a "$R_DIR/R64.app"

@@ -15,4 +15,4 @@ export R_LIBRARIES="$R_DIR/Library/Frameworks/R.framework/Versions/2.15/Resource
 cd "$R_DIR"
 
 # Load R and update packages first
-open -a "$R_DIR/R.app"
+open -a "$R_DIR/R64.app"
