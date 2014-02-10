@@ -1,0 +1,9 @@
+Package: tools
+Version: 2.15.3
+Priority: base
+Title: Tools for Package Development
+Author: R Core Team
+Maintainer: R Core Team <R-core@r-project.org>
+Description: Tools for package development, administration and documentation
+License: Part of R 2.15.3
+Built: R 2.15.3; universal-apple-darwin9.8.0; 2013-03-04 21:19:01 UTC; unix

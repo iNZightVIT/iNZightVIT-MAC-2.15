@@ -1,0 +1,149 @@
+# etc/Makeconf.  Generated from Makeconf.in by configure.
+#
+# ${R_HOME}/etc/Makeconf
+#
+# R was configured using the following call
+# (not including env. vars and site configuration)
+# configure  'r_arch=i386' 'CC=gcc -arch i386 -std=gnu99' 'CXX=g++-4.2 -arch i386' 'OBJC=gcc-4.2 -arch i386' 'F77=gfortran-4.2 -arch i386' 'FC=gfortran-4.2 -arch i386' 'CFLAGS=-g -O2' 'CXXFLAGS=-mtune=core2 -g -O2' 'OBJCFLAGS=-mtune=core2 -g -O2' 'FCFLAGS=-mtune=core2 -g -O2' 'F77FLAGS=-mtune=core2 -g -O2' '--with-system-zlib' '--with-ICU' '--enable-memory-profiling' '--disable-openmp'
+
+## This fails if it contains spaces, or if it is quoted
+include $(R_SHARE_DIR)/make/vars.mk
+
+AR = ar
+## Used by packages 'maps' and 'mapdata'
+AWK = awk
+BLAS_LIBS = -L$(R_HOME)/lib$(R_ARCH) -lRblas
+C_VISIBILITY = 
+CC = gcc -arch i386 -std=gnu99
+CFLAGS = -g -O2 $(LTO)
+CPICFLAGS = -fPIC
+CPPFLAGS = -I/usr/local/include
+CXX = g++ -arch i386
+CXXCPP = g++ -arch i386 -E
+CXXFLAGS = -g -O2 $(LTO)
+CXXPICFLAGS = -fPIC
+DYLIB_EXT = .dylib
+DYLIB_LD = gcc -arch i386 -std=gnu99
+DYLIB_LDFLAGS = -dynamiclib -Wl,-headerpad_max_install_names  -undefined dynamic_lookup -single_module -multiply_defined suppress# $(CFLAGS) $(CPICFLAGS)
+DYLIB_LINK = $(DYLIB_LD) $(DYLIB_LDFLAGS) $(LDFLAGS)
+ECHO = echo
+ECHO_C = \c
+ECHO_N = 
+ECHO_T = 
+## NB, set FC before F77 as on Solaris make, setting FC sets F77
+FC = gfortran -arch i386
+FCFLAGS = -g -O2 $(LTO)
+## additional libs needed when linking with $(FC), e.g. on Solaris
+FCLIBS = 
+F77 = gfortran -arch i386
+F77_VISIBILITY = 
+FFLAGS = -g -O2 $(LTO)
+FLIBS =  -lgfortran
+FCPICFLAGS = -fno-common
+FPICFLAGS = -fPIC
+FOUNDATION_CPPFLAGS = 
+FOUNDATION_LIBS = -framework Foundation
+JAR = /usr/bin/jar
+JAVA = /usr/bin/java
+JAVAC = /usr/bin/javac
+JAVAH = /usr/bin/javah
+JAVA_HOME = /System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Home
+JAVA_LD_LIBRARY_PATH = 
+JAVA_LIBS = -framework JavaVM
+JAVA_CPPFLAGS = -I/System/Library/Frameworks/JavaVM.framework/Headers
+LAPACK_LIBS = -L$(R_HOME)/lib$(R_ARCH) -lRlapack
+## we only need this is if it is external, as otherwise link to R
+LIBINTL=   -Wl,-framework -Wl,CoreFoundation
+LIBM = 
+LIBR = -F/Library/Frameworks/R.framework/.. -framework R
+LIBS =  -llzma -lz -licucore -lm -liconv
+## needed by R CMD config
+LIBnn = lib
+LIBTOOL = $(SHELL) "$(R_HOME)/bin/libtool"
+LDFLAGS = -L/usr/local/lib
+LTO = 
+## needed to build applications linking to static libR
+MAIN_LD = gcc -arch i386 -std=gnu99
+MAIN_LDFLAGS = 
+MAIN_LINK = $(MAIN_LD) $(MAIN_LDFLAGS) $(LDFLAGS)
+MKINSTALLDIRS = $(R_HOME)/bin/mkinstalldirs
+OBJC = gcc -arch i386
+OBJCFLAGS = -g -O2 -fobjc-exceptions $(LTO)
+OBJC_LIBS = -lobjc 
+OBJCXX = g++ -arch i386
+R_ARCH = /i386
+RANLIB = ranlib
+SAFE_FFLAGS = -g -O2 -ffloat-store
+SED = /usr/bin/sed
+SHELL = /bin/sh
+SHLIB_CFLAGS = 
+SHLIB_CXXFLAGS = 
+SHLIB_CXXLD = g++ -arch i386
+SHLIB_CXXLDFLAGS = -dynamiclib -Wl,-headerpad_max_install_names  -undefined dynamic_lookup -single_module -multiply_defined suppress
+SHLIB_EXT = .so
+SHLIB_FCLD = gfortran -arch i386
+SHLIB_FCLDFLAGS = -dynamiclib -Wl,-headerpad_max_install_names  -undefined dynamic_lookup -single_module -multiply_defined suppress
+SHLIB_FFLAGS = 
+SHLIB_LD = gcc -arch i386 -std=gnu99
+SHLIB_LDFLAGS = -dynamiclib -Wl,-headerpad_max_install_names  -undefined dynamic_lookup -single_module -multiply_defined suppress# $(CFLAGS) $(CPICFLAGS)
+SHLIB_LIBADD = 
+SHLIB_LINK = $(SHLIB_LD) $(SHLIB_LDFLAGS) $(LDFLAGS)
+SHLIB_OPENMP_CFLAGS = 
+SHLIB_OPENMP_CXXFLAGS = 
+SHLIB_OPENMP_FCFLAGS = 
+SHLIB_OPENMP_FFLAGS = 
+STRIP_LIBS = strip -x
+STRIP_STATIC_LIBS = strip -S
+TCLTK_CPPFLAGS = -I/usr/local/include -I/usr/local/include  -I/usr/X11/include
+TCLTK_LIBS = -L/usr/local/lib -ltcl8.5 -L/usr/local/lib -ltk8.5 -L/usr/X11R6/lib -lX11 -Wl,-weak-lXss -lXext
+
+## for linking to libR.a
+STATIC_LIBR = # "$(R_HOME)/lib$(R_ARCH)/libR.a" $(BLAS_LIBS) $(FLIBS)  $(LIBINTL) -lreadline  $(LIBS)
+
+
+R_XTRA_CFLAGS = 
+R_XTRA_CPPFLAGS =  -I$(R_INCLUDE_DIR) -I$(R_INCLUDE_DIR)/i386 -DNDEBUG
+R_XTRA_CXXFLAGS = 
+R_XTRA_FFLAGS = 
+
+ALL_CFLAGS = $(R_XTRA_CFLAGS) $(PKG_CFLAGS) $(CPICFLAGS) $(SHLIB_CFLAGS) $(CFLAGS)
+ALL_CPPFLAGS = $(R_XTRA_CPPFLAGS) $(PKG_CPPFLAGS) $(CPPFLAGS) $(CLINK_CPPFLAGS)
+ALL_CXXFLAGS = $(R_XTRA_CXXFLAGS) $(PKG_CXXFLAGS) $(CXXPICFLAGS) $(SHLIB_CXXFLAGS) $(CXXFLAGS)
+ALL_OBJCFLAGS = $(PKG_OBJCFLAGS) $(CPICFLAGS) $(SHLIB_CFLAGS) $(OBJCFLAGS)
+ALL_OBJCXXFLAGS = $(PKG_OBJCXXFLAGS) $(CXXPICFLAGS) $(SHLIB_CXXFLAGS) $(OBJCXXFLAGS)
+ALL_FFLAGS = $(R_XTRA_FFLAGS) $(PKG_FFLAGS) $(FPICFLAGS) $(SHLIB_FFLAGS) $(FFLAGS)
+ALL_LIBS = $(PKG_LIBS) $(SHLIB_LIBADD) $(LIBR) $(LIBINTL)
+
+.SUFFIXES:
+.SUFFIXES: .c .cc .cpp .d .f .f90 .f95 .m .mm .M .o
+
+.c.o:
+	$(CC) $(ALL_CPPFLAGS) $(ALL_CFLAGS) -c $< -o $@
+.c.d:
+	@echo "making $@ from $<"
+	@gcc -arch i386 -std=gnu99 -MM $(ALL_CPPFLAGS) $< > $@
+.cc.o:
+	$(CXX) $(ALL_CPPFLAGS) $(ALL_CXXFLAGS) -c $< -o $@
+.cpp.o:
+	$(CXX) $(ALL_CPPFLAGS) $(ALL_CXXFLAGS) -c $< -o $@
+.cc.d:
+	@echo "making $@ from $<"
+	@$(CXX) -M $(ALL_CPPFLAGS) $< > $@
+.cpp.d:
+	@echo "making $@ from $<"
+	@$(CXX) -M $(ALL_CPPFLAGS) $< > $@
+.m.o:
+	$(OBJC) $(ALL_CPPFLAGS) $(ALL_OBJCFLAGS) -c $< -o $@
+.m.d:
+	@echo "making $@ from $<"
+	@gcc -arch i386 -MM $(ALL_CPPFLAGS) $< > $@
+.mm.o:
+	$(OBJCXX) $(ALL_CPPFLAGS) $(ALL_OBJCXXFLAGS) -c $< -o $@
+.M.o:
+	$(OBJCXX) $(ALL_CPPFLAGS) $(ALL_OBJCXXFLAGS) -c $< -o $@
+.f.o:
+	$(F77) $(ALL_FFLAGS) -c $< -o $@
+.f95.o:
+	$(FC) $(PKG_FCFLAGS) $(FCPICFLAGS) $(FCFLAGS) -c  $< -o $@
+.f90.o:
+	$(FC) $(PKG_FCFLAGS) $(FCPICFLAGS) $(FCFLAGS) -c  $< -o $@

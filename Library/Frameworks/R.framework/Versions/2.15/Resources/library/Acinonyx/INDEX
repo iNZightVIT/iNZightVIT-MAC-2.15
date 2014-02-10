@@ -1,0 +1,12 @@
+add                     Add (or delete) objects into (or from) an
+                        enclosing object
+ibar                    Create an interactive bar chart or spine plot
+icontainer              Creates a new interactive container
+ihist                   Create an interactive histogram or spinogram
+ilines                  Add lines to an interactive plot
+ipcp                    Create an interactive parallel coordinates plot
+iplot                   Creates an interactive plot
+itext                   Add text objects to an interactive plot
+move                    Move an object
+primitives              Obtain interactive primitives from a plot.
+redraw                  Redraw an object

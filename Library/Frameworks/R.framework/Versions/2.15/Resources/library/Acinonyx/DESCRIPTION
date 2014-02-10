@@ -1,0 +1,14 @@
+Package: Acinonyx
+Version: 3.0-0
+Title: iPlots eXtreme
+Author: Simon Urbanek <simon.urbanek@r-project.org>
+Maintainer: Simon Urbanek <simon.urbanek@r-project.org>
+Depends: R (>= 2.5.0)
+Description: iPlots eXtreme - high-performance interactive graphics for analysis of large data
+SystemRequirements: OpenGL, (X11 with GLX + GLU + FreeType | Windows |
+        Mac OS X), GNU Make
+License: GPL-2
+URL: http://www.rforge.net/Acinonyx/
+Packaged: 2013-01-22 02:40:23 UTC; svnuser
+Built: R 2.15.3; universal-apple-darwin9.8.0; 2013-04-02 05:36:25 UTC; unix
+Archs: i386, x86_64
