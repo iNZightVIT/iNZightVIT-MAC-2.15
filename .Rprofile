@@ -16,18 +16,19 @@ suppressPackageStartupMessages({
   library(graphics)
   library(grid)
   suppressWarnings({
-    library(png)
+    trypng <- try(library(png))
   })
 })
 
 
-dev.new(width = 3.5, height = 2)
-grid.newpage()
-splashImg <- readPNG(system.file("images", "inzightvit-splash.png",
-                                 package = "vit"),
-                     exists("rasterImage"))
-grid.raster(splashImg, width = unit(3.5, "inches"), height = unit(2, "inches"))
-
+if (!inherits(trypng, "try-error")) {
+    dev.new(width = 3.5, height = 2)
+    grid.newpage()
+    splashImg <- readPNG(system.file("images", "inzightvit-splash.png",
+                                     package = "vit"),
+                         exists("rasterImage"))
+    grid.raster(splashImg, width = unit(3.5, "inches"), height = unit(2, "inches"))
+}
 
 message("(Dept. of Statistics, Uni. of Auckland)")
 message("")
@@ -37,7 +38,7 @@ suppressWarnings({
   library(vit)
 })
 
-tmp <- dev.off()
+tmp <- try(dev.off())
 # rm(tmp)  # gives an error "cannot remove from base namespace"
 
 suppressPackageStartupMessages({
