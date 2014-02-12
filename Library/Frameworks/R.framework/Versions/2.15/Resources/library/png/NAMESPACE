@@ -1,2 +1,2 @@
-useDynLib(png, write_png, read_png)
+useDynLib(png)
 exportPattern(".*PNG")
