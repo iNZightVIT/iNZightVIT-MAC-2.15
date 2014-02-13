@@ -4,16 +4,18 @@ Author: Simon Wood <simon.wood@r-project.org>
 Maintainer: Simon Wood <simon.wood@r-project.org>
 Title: Mixed GAM Computation Vehicle with GCV/AIC/REML smoothness
         estimation
-Description: Routines for GAMs and other generalized ridge regression  
-             with multiple smoothing parameter selection by GCV, REML  
-             or UBRE/AIC. Also GAMMs. Includes a gam() function.
+Description: Routines for GAMs and other generalized ridge regression
+        with multiple smoothing parameter selection by GCV, REML or
+        UBRE/AIC. Also GAMMs. Includes a gam() function.
 Priority: recommended
 Depends: R (>= 2.14.0), stats, graphics
 Imports: nlme, methods, Matrix
 Suggests: nlme (>= 3.1-64), splines, Matrix, parallel
 LazyLoad: yes
 ByteCompile: yes
-License: GPL (>=2)
+License: GPL (>= 2)
 Packaged: 2012-10-14 19:28:35 UTC; sw283
-Built: R 2.15.3; universal-apple-darwin9.8.0; 2013-03-04 21:24:07 UTC; unix
-Archs: i386
+Repository: CRAN
+Date/Publication: 2012-10-15 11:19:58
+Built: R 2.15.1; universal-apple-darwin9.8.0; 2012-10-16 07:12:45 UTC; unix
+Archs: i386, x86_64

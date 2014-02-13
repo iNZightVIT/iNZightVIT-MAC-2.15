@@ -102,6 +102,7 @@ psurvreg	dsurvreg
 pyears	pyears
 qsurvreg	dsurvreg
 quantile.survfit	quantile.survfit
+quantile.survfitms	quantile.survfit
 ratetable	ratetable
 ratetableDate	ratetableDate
 rats	rats
@@ -159,6 +160,7 @@ tcut	tcut
 tobin	tobin
 tt	tt
 untangle.specials	untangle.specials
+uspop2	uspop2
 vcov.coxph	coxph
 vcov.survreg	survreg
 veteran	veteran

@@ -24,4 +24,5 @@ Collate: 'misc.R' 'guiToolkit.R' 'BasicInterface.R' 'S4-methods.R'
         'gstatusbar.R' 'gtable.R' 'gtext.R' 'gtimer.R' 'gtoolbar.R'
         'gtree.R' 'gedit.R' 'gexpandgroup.R' 'gvarbrowser.R' 'icons.R'
         'gdfnotebook.R' 'gfilter.R' 'ggraphicsnotebook.R'
-Built: R 2.15.3; ; 2014-02-09 22:44:44 UTC; unix
+Packaged: 2014-02-13 06:10:35 UTC; Tom
+Built: R 2.15.3; ; 2014-02-13 07:01:32 UTC; unix

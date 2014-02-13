@@ -1,7 +1,7 @@
 Package: rpart
 Priority: recommended
-Version: 4.1-0
-Date: 2012-11-29
+Version: 4.1-1
+Date: 2013-03-20
 Authors@R: c(person("Terry", "Therneau", role = "aut", email =
         "therneau@mayo.edu"), person("Beth", "Atkinson", role = "aut",
         email = "atkinson@mayo.edu"), person("Brian", "Ripley", role =
@@ -16,10 +16,12 @@ LazyData: yes
 ByteCompile: yes
 Note: Maintainers are not available to give advice on using a package
         they did not author.
-Packaged: 2012-11-29 14:23:25 UTC; ripley
-Author: Terry Therneau [aut],
-  Beth Atkinson [aut],
-  Brian Ripley [aut, trl, cre] (author of R port)
+Packaged: 2013-03-20 07:27:05 UTC; ripley
+Author: Terry Therneau [aut], Beth Atkinson [aut], Brian Ripley [aut,
+        trl, cre] (author of R port)
 Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
-Built: R 2.15.3; universal-apple-darwin9.8.0; 2013-03-04 21:22:05 UTC; unix
-Archs: i386
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2013-03-20 11:21:03
+Built: R 2.15.3; universal-apple-darwin9.8.0; 2013-03-28 05:28:57 UTC; unix
+Archs: i386, x86_64

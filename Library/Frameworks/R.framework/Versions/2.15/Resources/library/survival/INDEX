@@ -86,4 +86,5 @@ tobin                   Tobin's Tobit data
 tt                      Mark time tranform terms
 untangle.specials       Help Process the 'specials' Argument of the
                         'terms' Function.
+uspop2                  Projected US Population
 veteran                 Veterans' Administration Lung Cancer study

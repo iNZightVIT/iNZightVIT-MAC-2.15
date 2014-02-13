@@ -62,10 +62,11 @@ Collate: 'canvas-refclass.R' 'canvas-viewports.R' 'canvas-plotdata.R'
         'methods-sampvar-proportion.R'
         'methods-sampvar-proportion-diff.R' 'methods-sampvar-slope.R'
         'stackPoints.R'
+Packaged: 2014-02-13 06:28:50 UTC; Tom
 Author: Garrett Grolemund [aut],
   Simon Potter [aut, cre],
   Ben Stevenson [aut],
   Vivian Li [ctb],
   Danny Chang [ctb]
 Maintainer: Simon Potter <spot023@aucklanduni.ac.nz>
-Built: R 2.15.3; ; 2014-02-10 00:05:10 UTC; unix
+Built: R 2.15.3; ; 2014-02-13 07:03:00 UTC; unix

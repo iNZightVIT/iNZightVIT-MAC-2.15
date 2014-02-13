@@ -2,8 +2,8 @@ Title: Survival Analysis
 Maintainer: Terry Therneau <therneau.terry@mayo.edu>
 Priority: recommended
 Package: survival
-Version: 2.37-2
-Date: 2012-11-01
+Version: 2.37-4
+Date: 2013-02-26
 Depends: stats, utils, graphics, splines, R (>= 2.13.0)
 LazyData: Yes
 LazyLoad: Yes
@@ -14,11 +14,14 @@ Authors@R: c(person(c("Terry", "M"), "Therneau",
         comment="original S->R port and maintainer until 2009"))
 Author: Terry Therneau
 Description: survival analysis: descriptive statistics, two-sample
-  tests, parametric accelerated failure models, Cox model. Delayed entry
-  (truncation) allowed for all models; interval censoring for parametric
-  models. Case-cohort designs.
-License: LGPL (>=2)
+        tests, parametric accelerated failure models, Cox model.
+        Delayed entry (truncation) allowed for all models; interval
+        censoring for parametric models. Case-cohort designs.
+License: LGPL (>= 2)
 URL: http://r-forge.r-project.org
-Packaged: 2012-12-07 19:06:27 UTC; therneau
-Built: R 2.15.3; universal-apple-darwin9.8.0; 2013-03-04 21:22:06 UTC; unix
-Archs: i386
+Packaged: 2013-02-26 17:19:25 UTC; therneau
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2013-02-26 19:03:03
+Built: R 2.15.2; universal-apple-darwin9.8.0; 2013-02-27 08:05:49 UTC; unix
+Archs: i386, x86_64

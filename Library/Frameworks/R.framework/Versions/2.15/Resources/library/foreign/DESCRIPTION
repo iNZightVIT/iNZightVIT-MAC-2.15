@@ -1,7 +1,7 @@
 Package: foreign
 Priority: recommended
-Version: 0.8-52
-Date: 2013-01-02
+Version: 0.8-53
+Date: 2013-03-20
 Title: Read Data Stored by Minitab, S, SAS, SPSS, Stata, Systat, dBase,
         ...
 Depends: R (>= 2.14.0), stats
@@ -20,26 +20,23 @@ Authors@R: structure( c(person("R Core Team", email =
         "cph")), person("Free Software Foundation, Inc.", role =
         "cph")))
 Copyright: see file COPYRIGHTS
-Description: Functions for reading and writing data stored by statistical
-        packages such as Minitab, S, SAS, SPSS, Stata, Systat, ...,
-	and for reading and writing dBase files.
+Description: Functions for reading and writing data stored by
+        statistical packages such as Minitab, S, SAS, SPSS, Stata,
+        Systat, ..., and for reading and writing dBase files.
 ByteCompile: yes
 Biarch: yes
 License: GPL (>= 2)
 BugReports: http://bugs.r-project.org
-Packaged: 2013-01-02 13:30:46 UTC; ripley
-Author: R Core Team [aut, cph, cre],
-  Roger Bivand [ctb, cph],
-  Vincent J. Carey [ctb, cph],
-  Saikat DebRoy [ctb, cph],
-  Stephen Eglen [ctb, cph],
-  Rajarshi Guha [ctb, cph],
-  Nicholas Lewin-Koh [ctb, cph],
-  Mark Myatt [ctb, cph],
-  Ben Pfaff [ctb],
-  Frank Warmerdam [ctb, cph],
-  Stephen Weigand [ctb, cph],
-  Free Software Foundation, Inc. [cph]
+Packaged: 2013-03-19 11:48:31 UTC; ripley
+Author: R Core Team [aut, cph, cre], Roger Bivand [ctb, cph], Vincent
+        J. Carey [ctb, cph], Saikat DebRoy [ctb, cph], Stephen Eglen
+        [ctb, cph], Rajarshi Guha [ctb, cph], Nicholas Lewin-Koh [ctb,
+        cph], Mark Myatt [ctb, cph], Ben Pfaff [ctb], Frank Warmerdam
+        [ctb, cph], Stephen Weigand [ctb, cph], Free Software
+        Foundation, Inc. [cph]
 Maintainer: R Core Team <R-core@R-project.org>
-Built: R 2.15.3; universal-apple-darwin9.8.0; 2013-03-04 21:22:05 UTC; unix
-Archs: i386
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2013-03-19 12:52:56
+Built: R 2.15.3; universal-apple-darwin9.8.0; 2013-03-28 05:07:20 UTC; unix
+Archs: i386, x86_64
