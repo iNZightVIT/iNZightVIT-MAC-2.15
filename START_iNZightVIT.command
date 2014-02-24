@@ -4,7 +4,7 @@
 export R_DIR="`dirname \"$0\"`"
 # Need to tell R where to look for code to automatically
 # execute upon startup
-export R_PROFILE="$R_DIR/.Rprofile"  #"$R_DIR/loadVIT.R"
+export R_PROFILE="$R_DIR/loadVIT.R"
 export DYLD_FALLBACK_FRAMEWORK_PATH="$R_DIR/Library"
 export DYLD_FRAMEWORK_PATH="$R_DIR/Library/Frameworks/R.framework"
 export DYLD_LIBRARY_PATH="$R_DIR/Library/Frameworks/R.framework/Versions/2.15/Resources/lib"
