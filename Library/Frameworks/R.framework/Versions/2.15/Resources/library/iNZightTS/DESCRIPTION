@@ -1,7 +1,7 @@
 Package: iNZightTS
 Type: Package
 Title: Time Series for iNZight
-Version: 1.0
+Version: 1.1
 Date: 2014-02-25
 Authors@R: c(person("Simon", "Potter", role = c("aut", "cre"), email =
         "spot023@aucklanduni.ac.nz"), person("David", "Banks", role =
@@ -15,4 +15,4 @@ Author: Simon Potter [aut, cre],
   David Banks [aut],
   Marco Kuper [aut]
 Maintainer: Simon Potter <spot023@aucklanduni.ac.nz>
-Built: R 2.15.3; ; 2014-02-26 22:11:00 UTC; unix
+Built: R 2.15.3; ; 2014-02-26 22:45:01 UTC; unix
