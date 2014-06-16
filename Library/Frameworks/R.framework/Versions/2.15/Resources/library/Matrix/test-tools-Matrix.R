@@ -101,11 +101,11 @@ Q.eq <- function(x, y,
 	if(isDense)
 	    all(x == y | (is.na(x) & is.na(y)))
 	else ## 'x == y' blows up for large sparse matrices:
-	    isTRUE(all.equal(asC(x), asC(y), tol = 0.,
+	    isTRUE(all.equal(asC(x), asC(y), tolerance = 0.,
 			     check.attributes = dimnames.check))
     }
     else if(is.numeric(tol) && tol >= 0) {
-        isTRUE(all.equal(asC(x), asC(y), tol = tol,
+        isTRUE(all.equal(asC(x), asC(y), tolerance = tol,
                          check.attributes = dimnames.check))
     }
     else stop("'tol' must be NA or non-negative number")
@@ -225,7 +225,8 @@ mkLDL <- function(n, density = 1/3) {
     list(A = A, L = L, d.half = d.half, D = D)
 }
 
-eqDeterminant <- function(m1, m2, NA.Inf.ok=FALSE, ...) {
+eqDeterminant <- function(m1, m2, NA.Inf.ok=FALSE, tol=.Machine$double.eps^0.5, ...)
+{
     d1 <- determinant(m1) ## logarithm = TRUE
     d2 <- determinant(m2)
     d1m <- as.vector(d1$modulus)# dropping attribute
@@ -243,7 +244,7 @@ eqDeterminant <- function(m1, m2, NA.Inf.ok=FALSE, ...) {
     if(is.infinite(d1m)) d1$modulus <- sign(d1m)* .Machine$double.xmax
     if(is.infinite(d2m)) d2$modulus <- sign(d2m)* .Machine$double.xmax
     ## now they are finite or *one* of them is NA/NaN, and all.equal() will tell so:
-    all.equal(d1, d2, ...)
+    all.equal(d1, d2, tolerance=tol, ...)
 }
 
 ##' @param A a non-negative definite sparseMatrix, typically "dsCMatrix"
@@ -305,11 +306,11 @@ allCholesky <- function(A, verbose = FALSE, silentTry = FALSE)
 
 ###----- Checking a "Matrix" -----------------------------------------
 
-##' <description>
+##' Check the compatibility of \pkg{Matrix} package Matrix with a
+##' \dQuote{traditional} \R matrix and perform a host of internal consistency
+##' checks.
 ##'
-##' <details>
-##' @title Compatibility tests "Matrix" <-> "traditional matrix"
-##'        and many more consistency checks
+##' @title Check Compatibility of Matrix Package Matrix with Traditional R Matrices
 ##'
 ##' @param m   a "Matrix"
 ##' @param m.m as(m, "matrix")  {if 'do.matrix' }
@@ -330,8 +331,8 @@ checkMatrix <- function(m, m.m = if(do.matrix) as(m, "matrix"),
 			do.matrix = !isSparse || prod(dim(m)) < 1e6,
 			do.t = TRUE, doNorm = TRUE, doOps = TRUE,
                         doSummary = TRUE, doCoerce = TRUE,
-			doCoerce2 = doCoerce && !extends(cld, "RsparseMatrix"),
-			do.prod = do.t && do.matrix && !extends(cld, "RsparseMatrix"),
+			doCoerce2 = doCoerce && !isRsp, doDet = do.matrix,
+			do.prod = do.t && do.matrix && !isRsp,
 			verbose = TRUE, catFUN = cat)
 {
     ## is also called from  dotestMat()  in ../tests/Class+Meth.R
@@ -342,11 +343,14 @@ checkMatrix <- function(m, m.m = if(do.matrix) as(m, "matrix"),
     clNam <- class(m)
     cld <- getClassDef(clNam) ## extends(cld, FOO) is faster than is(m, FOO)
     isCor    <- extends(cld, "corMatrix")
-    isSparse <- extends(cld, "sparseMatrix") # also true for diagonalMatrix !
     isSym    <- extends(cld, "symmetricMatrix")
-    isDiag   <- extends(cld, "diagonalMatrix")
-    isPerm   <- extends(cld, "pMatrix")
-    isTri <- !isSym && !isDiag && !isPerm && extends(cld, "triangularMatrix")
+    if(isSparse <- extends(cld, "sparseMatrix")) { # also true for these
+	isRsp  <- extends(cld, "RsparseMatrix")
+	isDiag <- extends(cld, "diagonalMatrix")
+	isInd  <- extends(cld, "indMatrix")
+	isPerm <- extends(cld, "pMatrix")
+    } else isRsp <- isDiag <- isInd <- isPerm <- FALSE
+    isTri <- !isSym && !isDiag && !isInd && extends(cld, "triangularMatrix")
     is.n     <- extends(cld, "nMatrix")
     nonMatr  <- clNam != Matrix:::MatrixClass(clNam, cld)
 
@@ -384,13 +388,17 @@ checkMatrix <- function(m, m.m = if(do.matrix) as(m, "matrix"),
 	if(isSym) ## check that t() swaps 'uplo'  L <--> U :
 	    stopifnot(c("L","U") == sort(c(m@uplo, tm@uplo)))
 	ttm <- t(tm)
-	if(extends(cld, "CsparseMatrix") ||
-	   extends(cld, "generalMatrix") || isDiag)
+        ## notInd: "pMatrix" ok, but others inheriting from "indMatrix" are not
+        notInd <- (!isInd || isPerm)
+	if(notInd && (extends(cld, "CsparseMatrix") ||
+	   extends(cld, "generalMatrix") || isDiag))
             stopifnot(Qidentical(m, ttm, strictClass = !nonMatr))
-	else if(do.matrix)
-	    stopifnot(nonMatr || class(ttm) == clNam,
-                      all(m == ttm | ina))
-        ## else : not testing
+	else if(do.matrix) {
+	    if(notInd) stopifnot(nonMatr || class(ttm) == clNam)
+	    stopifnot(all(m == ttm | ina))
+	    ## else : not testing
+	}
+
 
 	## crossprod()	%*%  etc
 	if(do.prod) {
@@ -444,7 +452,7 @@ checkMatrix <- function(m, m.m = if(do.matrix) as(m, "matrix"),
 	stopifnot(is(vm, "Matrix"), validObject(vm), dim(vm) == c(d[1]*d[2], 1))
     }
 
-    if(!isPerm)
+    if(!isInd)
         m.d <- local({ m. <- m; diag(m.) <- diag(m); m. })
     if(do.matrix)
     stopifnot(identical(dim(m.m), dim(m)),
@@ -463,10 +471,10 @@ checkMatrix <- function(m, m.m = if(do.matrix) as(m, "matrix"),
     if(isSparse) {
 	n0m <- drop0(m) #==> n0m is Csparse
 	has0 <- !Qidentical(n0m, as(m,"CsparseMatrix"))
-	if(!isPerm && !extends(cld, "RsparseMatrix") &&
+	if(!isInd && !isRsp &&
            !(extends(cld, "TsparseMatrix") && Matrix:::is_duplicatedT(m, di = d)))
                                         # 'diag<-' is does not change attrib:
-	    stopifnot(identical(m, m.d))
+	    stopifnot(Qidentical(m, m.d))# e.g., @factors may differ
     }
     else if(!identical(m, m.d)) { # dense : 'diag<-' is does not change attrib
 	if(isTri && m@diag == "U" && m.d@diag == "N" &&
@@ -493,7 +501,7 @@ checkMatrix <- function(m, m.m = if(do.matrix) as(m, "matrix"),
 	ns <- as(m, "nsparseMatrix")
 	stopifnot(identical(n1,ns),
 		  isDiag || ((if(isSym) Matrix:::nnzSparse else sum)(n1) ==
-			     length(if(isPerm) m@perm else Matrix:::diagU2N(m)@x)))
+			     length(if(isInd) m@perm else Matrix:::diagU2N(m)@x)))
         Cat("ok\n")
     }
 
@@ -533,8 +541,10 @@ checkMatrix <- function(m, m.m = if(do.matrix) as(m, "matrix"),
 		CatF("symmpart(m) + skewpart(m) == m: ")
 		Q.eq.symmpart(m)
 		CatF("ok;  determinant(): ")
-		if(any(is.na(m.m)) && extends(cld, "triangularMatrix"))
-		    Cat(" skipped: is triang. and has NA")
+		if(!doDet)
+		    Cat(" skipped (!doDet): ")
+		else if(any(is.na(m.m)) && extends(cld, "triangularMatrix"))
+		    Cat(" skipped: is triang. and has NA: ")
 		else
 		    stopifnot(eqDeterminant(m, m.m, NA.Inf.ok=TRUE))
 		Cat("ok\n")

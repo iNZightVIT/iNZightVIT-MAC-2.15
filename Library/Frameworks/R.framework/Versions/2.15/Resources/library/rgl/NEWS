@@ -461,3 +461,103 @@ v0.93.930
 v0.93.932 
   - calling rgl.material() before any rendering caused a crash on OSX.
     (Reported by Dan Tenenbaum.)
+
+v0.93.935
+  - in certain circumstances since 0.93.930, text would fail to appear.
+    (Reported by Karline Soetaert.)
+    
+v0.93.944
+  - write the rgl version into the webGL file
+  - cleaned up use of CHECKGLERROR, so that setting USE_GLGETERROR to 1 in 
+    R.h will enable detailed checking
+  - added identify3d() function
+  - fixed bbox bug in writeOBJ (reported by Matthias Zeeman), writePLY
+    and writeSTL.
+  - aspect3d() (called by plot3d()) caused the scene to be redrawn,
+    even if par3d("skipRedraw") was TRUE.
+  - addNormals.mesh3d() failed on objects when the matrices
+    of triangles or quadrilaterals had zero columns.
+  - rotate3d.mesh3d() did not transform normals properly
+  - the writeWebGL() function produced fragment shaders that would not
+    work in some browsers (e.g. Firefox and Chrome with the ANGLE
+    WebGL engine).
+  
+v0.93.952
+  - added triangulate(), polygon3d() , extrude3d() and turn3d() 
+     for display of shapes based on two-dimensional polygons or curves.
+  - fixed formatting of vertex reference numbers in writeOBJ() (issue
+    4732, reported by Alejandro Baranek). 
+  - added support for "headless" operation:  see help for new
+    function rgl.useNULL().  
+  - added name of device to result returned from rgl.cur(); added function
+    rgl.dev.list() to list all open devices.
+  - examples and demos now check rgl.useNULL(), and don't run invisible
+    animations.
+    
+v0.93.960
+  - writeWebGL now forces the position attribute to location 0, a
+    recommended optimization strategy.  The colour attribute is
+    forced to location 1.
+  - we now check for invalid characters when drawing text using bitmapped
+    fonts (bug 4787)
+  - gl2ps has been updated to version 1.3.8 and support for point and line
+    sizes has been added (bug 4792)
+  - internal functions .check3d() and rgl.select() have been exported,
+    as they were used by the car package.
+  - writePLY had errors writing points and lines.
+  - rgl now prints a warning when a requested font is unavailable and the
+    default font is substituted.
+    
+v0.93.963
+  - font selection assumed rgl was on the search path; now it may be 
+    imported but not attached.  Similarly, r3dDefaults need not be on
+    the search path.
+    
+v0.93.975
+  - rgl.texts without a window failed because it queried the window
+    before opening it.
+  - the scene3d() function now records complete information about the
+    bounding box and the background.
+  - rgl declares most of its C++ objects in the global namespace.  
+    Recently this has caused clashes with the igraph package, which 
+    does the same, and which also has a Shape class.  As a temporary 
+    workaround the rgl class has been renamed to rglShape.  A full 
+    rgl namespace will eventually be added, with only the API functions 
+    left in the global namespace.
+    
+v0.93.984
+  - most rgl C++ functions and classes are now in namespace "rgl".  
+    Others have prefix rgl_, with the exception of gl2ps functions,
+    which all have that prefix, and FTGL functions, which generally
+    have an FT prefix.
+  - entry points to the rgl DLL are now registered within the DLL,
+    and on systems that support it, all entry points other than the
+    registration function are hidden.
+  - writeWebGL() and the other write methods did not handle material
+    information properly after 0.93.975.
+    
+v0.93.986
+  - The FTGL functions were mistakenly added to the rgl namespace
+    on some OSX compiles.
+  - Changes have been made to satisfy the stringent requirements of
+    the Solaris compiler.
+    
+v0.93.987
+  - Added clipplanes3d function to implement clip planes.  (Still
+    only partially implemented.)
+    
+v0.93.991
+  - Some cleanup of the declarations (submitted by Karl Millar).
+  
+v0.93.995
+  - Improved the approximation to the surface normal for degenerate
+    grids in surface3d and persp3d.  (Problem found by Graham Griffiths
+    using polar coordinates; all r=0 points were at the same location.)
+  - The new surface normals are now saved in memory, so rgl.attrib
+    will return them even if they were calculated by rgl.
+  - Bounding box calculations for surfaces with user normals were 
+    incorrect.
+  - An array-overrun bug in rgl.attrib() showed up in writeWebGL.  
+    (Reported by Brian Ripley.)
+  - scene3d() now records light settings.
+    

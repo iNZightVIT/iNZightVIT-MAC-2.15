@@ -159,7 +159,7 @@ options(width=60)
 ### code chunk number 18: split1
 ###################################################
 mosaic(HEC, split_vertical = c(TRUE, FALSE, TRUE),
-labeling_args = list(abbreviate_labs = c(Eye = 3)))
+labeling_args = list(abbreviate = c(Eye = 3)))
 
 
 ###################################################
@@ -172,7 +172,7 @@ options(width=70)
 ### code chunk number 20: splitfig
 ###################################################
 mosaic(HEC, split_vertical = c(TRUE, FALSE, TRUE),
-labeling_args = list(abbreviate_labs = c(Eye = 3)))
+labeling_args = list(abbreviate = c(Eye = 3)))
 
 
 ###################################################
@@ -365,7 +365,7 @@ mosaic(ucb, gp = gpar(fill = fill_colors, col = 0))
 ###################################################
 mosaic(Titanic, gp = gpar(fill = c("gray","dark magenta")),
                 spacing = spacing_highlighting,
-                labeling_args = list(abbreviate_labs = c(Age = 3), rep = c(Survived = FALSE))
+                labeling_args = list(abbreviate = c(Age = 3), rep = c(Survived = FALSE))
       )
 
 
@@ -374,7 +374,7 @@ mosaic(Titanic, gp = gpar(fill = c("gray","dark magenta")),
 ###################################################
 mosaic(Titanic, gp = gpar(fill = c("gray","dark magenta")),
                 spacing = spacing_highlighting,
-                labeling_args = list(abbreviate_labs = c(Age = 3), rep = c(Survived = FALSE))
+                labeling_args = list(abbreviate = c(Age = 3), rep = c(Survived = FALSE))
       )
 
 
@@ -497,7 +497,7 @@ ipol <- function(x) pmin(x/4, 1)
 ### code chunk number 63: continuous2
 ###################################################
 mosaic(haireye, shade = TRUE, gp_args = list(interpolate = ipol),
-labeling_args = list(abbreviate_labs = c(Sex = TRUE)))
+labeling_args = list(abbreviate = c(Sex = TRUE)))
 
 
 ###################################################
@@ -571,7 +571,7 @@ mosaic(Titanic, labeling_args = list(clip = c(Survived = TRUE, Age = TRUE)))
 ###################################################
 ### code chunk number 72: abbreviating
 ###################################################
-mosaic(Titanic, labeling_args = list(abbreviate_labs = c(Survived = TRUE, Age = 3)))
+mosaic(Titanic, labeling_args = list(abbreviate = c(Survived = TRUE, Age = 3)))
 
 
 ###################################################
@@ -601,7 +601,7 @@ mosaic(Titanic, labeling_args = list(clip = c(Survived = TRUE, Age = TRUE)),
        newpage = FALSE, keep = TRUE, margin = c(left = 3), gp_labels = gpar(fontsize = 10))
 popViewport()
 pushViewport(viewport(layout.pos.col = 1, layout.pos.row = 2))
-mosaic(Titanic, labeling_args = list(abbreviate_labs = c(Survived = TRUE, Age = 2)),
+mosaic(Titanic, labeling_args = list(abbreviate = c(Survived = TRUE, Age = 2)),
        newpage = FALSE, keep = TRUE, margin = c(right = 3), gp_labels = gpar(fontsize = 10))
 popViewport()
 pushViewport(viewport(layout.pos.col = 2, layout.pos.row = 2))
@@ -632,7 +632,7 @@ mosaic(Titanic, labeling = labeling_left)
 ###################################################
 ### code chunk number 78: margins
 ###################################################
-mosaic(Titanic, labeling_args = list(tl_labels = FALSE, tl_varnames = TRUE, abbreviate_labs = c(Survived = 1, Age = 3)))
+mosaic(Titanic, labeling_args = list(tl_labels = FALSE, tl_varnames = TRUE, abbreviate = c(Survived = 1, Age = 3)))
 
 
 ###################################################
@@ -652,7 +652,7 @@ mosaic(Titanic, labeling = labeling_cboxed)
 ### code chunk number 81: labbl
 ###################################################
 mosaic(Titanic, labeling_args = list(tl_labels = TRUE, boxes = TRUE,
-       clip = c(Survived = FALSE, Age = FALSE, TRUE), abbreviate_labs = c(Age = 4),
+       clip = c(Survived = FALSE, Age = FALSE, TRUE), abbreviate = c(Age = 4),
        labbl_varnames = TRUE), margins = c(left = 4, right = 1, 3))
 
 
@@ -673,7 +673,7 @@ mosaic(Titanic, labeling_args = list(pos_varnames = "left", pos_labels = "left",
 popViewport()
 pushViewport(viewport(layout.pos.col = 2, layout.pos.row = 1))
 mosaic(Titanic, labeling_args = list(tl_labels = FALSE, tl_varnames = TRUE,
-                  abbreviate_labs = c(Survived = 1, Age = 3)), newpage = FALSE, keep = TRUE,
+                  abbreviate = c(Survived = 1, Age = 3)), newpage = FALSE, keep = TRUE,
        margins = c(left = 4, right = 1, 3), gp_labels = gpar(fontsize = 12))
 popViewport()
 pushViewport(viewport(layout.pos.col = 1, layout.pos.row = 2))
@@ -684,7 +684,7 @@ popViewport()
 pushViewport(viewport(layout.pos.col = 2, layout.pos.row = 2))
 mosaic(Titanic, labeling_args = list(tl_labels = TRUE, boxes = TRUE,
        clip = c(Survived = FALSE, Age = FALSE, TRUE),
-       labbl_varnames = TRUE, abbreviate_labs = c(Age = 4)),
+       labbl_varnames = TRUE, abbreviate = c(Age = 4)),
        margins = c(left = 4, right = 1, 3),
        newpage = FALSE, keep = TRUE, gp_labels = gpar(fontsize = 12))
 popViewport(2)
@@ -712,7 +712,7 @@ mosaic(~ PremaritalSex + ExtramaritalSex | MaritalStatus + Gender, data = PreSex
 ###################################################
 ### code chunk number 87: text
 ###################################################
-mosaic(Titanic, labeling_args = list(abbreviate_labs = c(Survived = 1, Age = 4)), pop = FALSE)
+mosaic(Titanic, labeling_args = list(abbreviate = c(Survived = 1, Age = 4)), pop = FALSE)
 
 tab <- ifelse(Titanic < 6, NA, Titanic)
 labeling_cells(text = tab, clip = FALSE)(Titanic)
@@ -738,7 +738,7 @@ mosaic(~ PremaritalSex + ExtramaritalSex | MaritalStatus + Gender, data = PreSex
        newpage = FALSE, keep = TRUE, gp_labels = gpar(fontsize = 10))
 popViewport()
 pushViewport(viewport(layout.pos.col = 2, layout.pos.row = 2))
-mosaic(Titanic, labeling_args = list(abbreviate_labs = c(Survived = 1, Age = 3)),
+mosaic(Titanic, labeling_args = list(abbreviate = c(Survived = 1, Age = 3)),
        pop = FALSE, newpage = FALSE, keep = TRUE, gp_labels = gpar(fontsize = 10))
 tab <- ifelse(Titanic < 6, NA, Titanic)
 labeling_cells(text = tab, clip = FALSE)(Titanic)

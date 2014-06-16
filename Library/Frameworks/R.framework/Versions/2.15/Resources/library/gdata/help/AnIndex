@@ -5,6 +5,7 @@ gdata-package	gdata-package
 .checkListLevelsMap	mapLevels
 .runRUnitTestsGdata	runRUnitTests
 aggregate.table	aggregate.table
+ans	ans
 Args	Args
 as.levelsMap	mapLevels
 as.listLevelsMap	mapLevels
@@ -19,6 +20,7 @@ centerText	centerText
 combine	combine
 ConvertMedUnits	ConvertMedUnits
 drop.levels	drop.levels
+duplicated2	duplicated2
 elem	elem
 env	env
 frameApply	frameApply

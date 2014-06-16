@@ -4,14 +4,15 @@ Description: Various R programming tools for data manipulation
 Depends: R (>= 2.13.0)
 SystemRequirements: perl
 Imports: gtools
-Version: 2.12.0
-Date: 2012-10-12
-Author: Gregory R. Warnes, with contributions from Ben Bolker, Gregor
-        Gorjanc, Gabor Grothendieck, Ales Korosec, Thomas Lumley, Don
-        MacQueen, Arni Magnusson, Jim Rogers, and others
-Maintainer: Gregory Warnes <greg@warnes.net>
+Version: 2.13.2
+Date: 2013-06-28
+Author: Gregory R. Warnes, Ben Bolker, Gregor Gorjanc, Gabor
+        Grothendieck, Ales Korosec, Thomas Lumley, Don MacQueen, Arni
+        Magnusson, Jim Rogers, and others
+Maintainer: Gregory R. Warnes <greg@warnes.net>
 License: GPL-2
-Packaged: 2012-09-12 17:41:01 UTC; warnegr1
+NeedsCompilation: no
+Packaged: 2013-07-01 21:10:12 UTC; warnes
 Repository: CRAN
-Date/Publication: 2012-09-12 18:32:34
-Built: R 2.15.1; ; 2012-09-13 07:12:51 UTC; unix
+Date/Publication: 2013-07-02 07:00:38
+Built: R 2.15.3; ; 2014-03-18 18:47:34 UTC; unix

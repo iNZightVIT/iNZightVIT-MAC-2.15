@@ -38,8 +38,8 @@ fitted.rqss	rqss.object
 formula.nlrq	nlrq
 formula.rq	rq.object
 index.dynrq	dynrq
-KhmaladzeTest	KhmaladzeTest
-khmaladzize	KhmaladzeTest
+KhmaladzeTest	khmaladzeTest
+khmaladzize	khmaladzeTest
 kselect	kuantile
 kuantile	kuantile
 kunique	kuantile
@@ -92,7 +92,7 @@ print.summary.nlrq	nlrq
 print.summary.rq	print.summary.rq
 print.summary.rqs	print.summary.rq
 print.summary.rqss	summary.rqss
-qdensity	KhmaladzeTest
+qdensity	khmaladzeTest
 qss	qss
 qss1	qss
 qss2	qss
@@ -127,6 +127,7 @@ start.dynrq	dynrq
 summary.crq	summary.crq
 summary.crqs	summary.crq
 summary.dynrq	dynrq
+summary.dynrqs	dynrq
 summary.nlrq	nlrq
 summary.rcrqs	summary.rq
 summary.rq	summary.rq

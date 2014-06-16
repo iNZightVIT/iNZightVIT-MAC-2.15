@@ -10,7 +10,7 @@
 <div align="center">
 <a href="../../../doc/html/packages.html"><img src="../../../doc/html/left.jpg" alt="[Up]" width="30" height="30" border="0"></a>
 <a href="../../../doc/html/index.html"><img src="../../../doc/html/up.jpg" alt="[Top]" width="30" height="30" border="0"></a>
-</div><h2>Documentation for package &lsquo;rgl&rsquo; version 0.93.932</h2>
+</div><h2>Documentation for package &lsquo;rgl&rsquo; version 0.93.996</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../demo">Code demos</a>.  Use <a href="../../utils/help/demo">demo()</a> to run them.</li>
@@ -40,6 +40,7 @@
 <a href="#T">T</a>
 <a href="#V">V</a>
 <a href="#W">W</a>
+<a href="#misc">misc</a>
 </p>
 
 <table width="100%">
@@ -86,6 +87,8 @@
 <table width="100%">
 <tr><td width="25%"><a href="scene.html">clear3d</a></td>
 <td>scene management</td></tr>
+<tr><td width="25%"><a href="planes.html">clipplanes3d</a></td>
+<td>add planes</td></tr>
 <tr><td width="25%"><a href="mesh3d.html">cube3d</a></td>
 <td>3D Mesh objects</td></tr>
 <tr><td width="25%"><a href="mesh3d.html">cuboctahedron3d</a></td>
@@ -126,11 +129,15 @@
 <td>Make an ellipsoid</td></tr>
 <tr><td width="25%"><a href="ellipse3d.html">ellipse3d.nls</a></td>
 <td>Make an ellipsoid</td></tr>
+<tr><td width="25%"><a href="extrude3d.html">extrude3d</a></td>
+<td>Generate extrusion mesh</td></tr>
 </table>
 
 <h2><a name="G">-- G --</a></h2>
 
 <table width="100%">
+<tr><td width="25%"><a href="par3d.html">getr3dDefaults</a></td>
+<td>Set or Query RGL Parameters</td></tr>
 <tr><td width="25%"><a href="grid3d.html">grid3d</a></td>
 <td>Add a grid to a 3D plot</td></tr>
 </table>
@@ -140,6 +147,8 @@
 <table width="100%">
 <tr><td width="25%"><a href="mesh3d.html">icosahedron3d</a></td>
 <td>3D Mesh objects</td></tr>
+<tr><td width="25%"><a href="identify3d.html">identify3d</a></td>
+<td>Identify points in plot.</td></tr>
 <tr><td width="25%"><a href="matrices.html">identityMatrix</a></td>
 <td>Work with homogeneous coordinates</td></tr>
 </table>
@@ -215,6 +224,8 @@
 <td>Saves the current scene to a variable, and displays such variables.</td></tr>
 <tr><td width="25%"><a href="3dobjects.html">points3d</a></td>
 <td>add primitive set shape</td></tr>
+<tr><td width="25%"><a href="polygon3d.html">polygon3d</a></td>
+<td>Triangulate and draw a polygon in three dimensions.</td></tr>
 <tr><td width="25%"><a href="scene.html">pop3d</a></td>
 <td>scene management</td></tr>
 <tr><td width="25%"><a href="scene3d.html">print.rglobject</a></td>
@@ -259,9 +270,13 @@
 <td>Assign focus to an RGL window</td></tr>
 <tr><td width="25%"><a href="scene.html">rgl.clear</a></td>
 <td>scene management</td></tr>
+<tr><td width="25%"><a href="planes.html">rgl.clipplanes</a></td>
+<td>add planes</td></tr>
 <tr><td width="25%"><a href="rgl-package.html">rgl.close</a></td>
 <td>3D visualization device system</td></tr>
 <tr><td width="25%"><a href="rgl-package.html">rgl.cur</a></td>
+<td>3D visualization device system</td></tr>
+<tr><td width="25%"><a href="rgl-package.html">rgl.dev.list</a></td>
 <td>3D visualization device system</td></tr>
 <tr><td width="25%"><a href="scene.html">rgl.ids</a></td>
 <td>scene management</td></tr>
@@ -295,6 +310,8 @@
 <td>add primitive set shape</td></tr>
 <tr><td width="25%"><a href="rgl-package.html">rgl.quit</a></td>
 <td>3D visualization device system</td></tr>
+<tr><td width="25%"><a href="rgl.select.html">rgl.select</a></td>
+<td>Switch to select mode, and return the mouse position selected.</td></tr>
 <tr><td width="25%"><a href="select3d.html">rgl.select3d</a></td>
 <td>Select a rectangle in an RGL scene</td></tr>
 <tr><td width="25%"><a href="rgl-package.html">rgl.set</a></td>
@@ -317,6 +334,8 @@
 <td>add text</td></tr>
 <tr><td width="25%"><a href="primitive.html">rgl.triangles</a></td>
 <td>add primitive set shape</td></tr>
+<tr><td width="25%"><a href="rgl.useNULL.html">rgl.useNULL</a></td>
+<td>Report default use of null device.</td></tr>
 <tr><td width="25%"><a href="rgl.user2window.html">rgl.user2window</a></td>
 <td>Convert between rgl user and window coordinates</td></tr>
 <tr><td width="25%"><a href="viewpoint.html">rgl.viewpoint</a></td>
@@ -401,6 +420,10 @@
 <td>Work with homogeneous coordinates</td></tr>
 <tr><td width="25%"><a href="3dobjects.html">triangles3d</a></td>
 <td>add primitive set shape</td></tr>
+<tr><td width="25%"><a href="triangulate.html">triangulate</a></td>
+<td>Triangulate a two-dimensional polygon.</td></tr>
+<tr><td width="25%"><a href="turn3d.html">turn3d</a></td>
+<td>Create a solid of rotation from a two-dimensional curve.</td></tr>
 </table>
 
 <h2><a name="V">-- V --</a></h2>
@@ -427,5 +450,12 @@
 <td>Read and write STL (stereolithography) format files</td></tr>
 <tr><td width="25%"><a href="writeWebGL.html">writeWebGL</a></td>
 <td>Write scene to HTML.</td></tr>
+</table>
+
+<h2><a name="misc">-- misc --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="check3d.html">.check3d</a></td>
+<td>Check for an open rgl window.</td></tr>
 </table>
 </body></html>

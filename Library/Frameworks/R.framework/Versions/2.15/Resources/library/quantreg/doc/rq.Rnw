@@ -2,7 +2,7 @@
 %\VignetteDepends{quantreg,MASS,SparseM,tripack}
 %\VignettePackage{quantreg}
 \documentclass{amsart}
-\usepackage{harvard}
+\usepackage{natbib}
 \newcommand{\Robject}[1]{{\texttt{#1}}}
 \newcommand{\Rfunction}[1]{{\texttt{#1}}}
 \newcommand{\Rpackage}[1]{{\texttt{#1}}}
@@ -17,7 +17,7 @@
 \author{Roger Koenker}
 
 \begin{document}
-\bibliographystyle{econometrica}
+\bibliographystyle{plainnat}
 \begin{abstract}
 Quantile regression is an evolving body of statistical
 methods for estimating and drawing inferences about conditional
@@ -62,7 +62,7 @@ the massive collective international effort represented by the \R project
 exceeds the most idealistic Marxist imagination.
 
 Algorithms have been a crucial part of the research challenge of quantile regression
-methods from their inception in the 18th century.  \citeasnoun{Stigler.84}  describes an
+methods from their inception in the 18th century.  \citet*{Stigler.84}  describes an
 amusing episode in 1760 in which the itinerant Croatian Jesuit Rudjer Boscovich sought
 computational advice in London  regarding his nascent method for  median regression.
 Ironically, a fully satisfactory answer to Boscovich's
@@ -76,7 +76,7 @@ statistical advantages of these methods.
 Since the early 1980's I have been developing software for quantile regression:
 initially for the S language of Chambers and Becker (1984), later for its
 commercial manifestation Splus, and since 1999 for the splendid open source
-dialect \R, initiated by \citeasnoun{IG} and sustained by the \citeasnoun{Rcore}.
+dialect \R, initiated by \citet*{IG} and sustained by the \citet*{Rcore}.
 Although there is now some functionality for quantile regression in most of the
 major commercial statistical packages, I have a natural predilection
 for the \R
@@ -86,9 +86,9 @@ quantile regression.
 
 \section{What is a vignette? }
 
-This document was written in the Sweave format of \citeasnoun{Leisch}.
+This document was written in the Sweave format of \citet*{Leisch}.
 Sweave is an implementation designed for \R of the literate programming style
-advocated by \citeasnoun{Knuth.LP}.  The format permits a natural interplay between code
+advocated by \citet*{Knuth.LP}.  The format permits a natural interplay between code
 written in {\R}, the output of that code, and commentary on the code.
 Sweave documents are preprocessed by \R to produce a \LaTeX~
 document that may then be processed by conventional methods.  Many
@@ -101,7 +101,7 @@ the source distribution directory \texttt{inst/doc}.
 
 I will not attempt to provide another  introduction to \R.  There are already
 several excellent resources intended to accomplish this task.  The
-books of \citeasnoun{Dalgaard.02} and \citeasnoun{VR} are particularly recommended.
+books of \citet*{Dalgaard.02} and \citet*{VR} are particularly recommended.
 The CRAN website link to contributed documentation
 also offers excellent  introductions in several languages.
 
@@ -172,7 +172,7 @@ points fall exactly on a hyperplane in 4-space.
 
 The second example in the \texttt{rq} helpfile computes
 a weighted univariate median using randomly generated data.  The original
-\citeasnoun{engel.1857} data on the relationship between food expenditure and household
+\citet*{engel.1857} data on the relationship between food expenditure and household
 income is considered in the third example.  The data is plotted and then six
 fitted quantile regression lines are superimposed on the scatterplot.
 The final example illustrates the imposition of inequality constraints on the quantile
@@ -207,7 +207,7 @@ summary(fit1)
 The resulting table gives the estimated intercept and slope in the first column
 and confidence intervals for these parameters in the second and third columns.
 By default, these confidence intervals are computed by the rank inversion method
-described in \citeasnoun{K.05}, Section 3.4.5.
+described in \citet*{K.05}, Section 3.4.5.
 To extract the residuals or the coefficients of the
 fitted relationship we can write,
 <<>>=
@@ -241,7 +241,7 @@ of parameters.  Likewise, plotting of various classes of \R objects
 can be carried out by the expression \texttt{plot(x)} with the
 expectation that the plot command will recognize the class of the
 object \texttt{x} and proceed accordingly.  More recently,
-\citeasnoun{C.98} has introduced an elegant elaboration of the
+\citet*{C.98} has introduced an elegant elaboration of the
 class, method-dispatch framework for \S and \R.
 
 Assignment of objects
@@ -279,8 +279,8 @@ Another option available in \texttt{summary.rq} is
 to compute bootstrapped standard errors.  This is accomplished by
 specifying the option \texttt{se="boot"}.  There are currently three
 flavors of the bootstrap available:  the standard $xy$-pair bootstrap,
-the \citeasnoun{PWY.94} version, and the Markov chain marginal bootstrap
-of \citeasnoun{HeHu} and \citeasnoun{KHM}.  There is also the ability
+the \citet*{PWY.94} version, and the Markov chain marginal bootstrap
+of \citet*{HeHu} and \citet*{KHM}.  There is also the ability
 to specify  $m$ out $n$ versions of the bootstrap in which the sample
 size of the bootstrap samples is different from (typically smaller
 than) the original sample size.  This ``subsampling'' approach has a
@@ -296,10 +296,10 @@ available.
 There are several options to the basic fitting routine \texttt{rq}.  An important option
 that controls the choice of the algorithm used in the fitting is \texttt{method}.
 The default is \texttt{method = "br"} which invokes a variant of the
-\citeasnoun{BR.74} simplex algorithm
-described in \citeasnoun{KO.87}.  For problems with more than a few thousand observations it
+\citet*{BR.74} simplex algorithm
+described in \citet*{KO.87}.  For problems with more than a few thousand observations it
 is worthwhile considering \texttt{method = "fn"}  which invokes the Frisch-Newton algorithm
-described in \citeasnoun{PK.1997}.   Rather than traversing around the
+described in \citet*{PK.1997}.   Rather than traversing around the
 exterior of the constraint set like the simplex method, the interior
 point approach embodied in the Frisch-Newton algorithm burrows from
 within the constraint set toward the exterior.  Instead of taking
@@ -465,7 +465,7 @@ functions  of food expenditure for households that are at the
 and the 90th percentile.
 In the right panel we plot corresponding density
 estimates for the two groups.  The density estimates employ the
-adaptive kernel method proposed by \citeasnoun{Silverman} and implemented
+adaptive kernel method proposed by \citet*{Silverman} and implemented
 in the \texttt{quantreg} function  \texttt{akj}.  This function
 is particularly convenient since it permits unequal mass to be
 associated with the observations such as those produced by the quantile
@@ -563,10 +563,10 @@ This is done with the \texttt{anova} command as follows:
 <<>>=
 anova(fit1, fit2, fit3)
 @
-This is an example of a general class of tests proposed in \citeasnoun{KB.82b}.
+This is an example of a general class of tests proposed in \citet*{KB.82b}.
 It may be instructive to look at the code for the command \texttt{anova.rq} to see how this
 test is carried out.  The Wald approach is used and the asymptotic covariance matrix
-is estimated using the approach of \citeasnoun{HK.92}.
+is estimated using the approach of \citet*{HK.92}.
 It also illustrates a  general syntax for testing in \R adapted to
 the present situation.
 
@@ -578,7 +578,7 @@ are nested.  The procedure \texttt{anova.rq} attempts to check whether
 the fitted models are nested, but this is not foolproof.
 These tests can be carried out either as Wald tests based on the
 estimated joint asymptotic covariance matrix of the coefficients, or
-using the rank test approach described in \citeasnoun{GJKP.94}.
+using the rank test approach described in \citet*{GJKP.94}.
 A variety of other options are described in the documentation of the
 function \texttt{anova.rq}.
 
@@ -596,14 +596,14 @@ Smirnov statistic, but the appearance of unknown nuisance parameters
 greatly complicates the limiting distribution theory.  Similar
 problems persist in the extension of these tests to the general
 quantile regression setting.  Using an approach introduced by
-\citeasnoun{khma.81}, \citeasnoun{KX.02} consider general forms
+\citet*{khma.81}, \citet*{KX.02} consider general forms
 of such tests.  The tests can be viewed as a generalization of
 the simple tests of equality of slopes across quantiles described
 in the previous section.
 
 In this section we briefly describe how to implement these tests in \R.
 The application considered is the quantile autoregression (QAR) model
-for weekly U.S. gasoline prices considered in \citeasnoun{KX.06}.  The
+for weekly U.S. gasoline prices considered in \citet*{KX.06}.  The
 data consists of 699 weekly  observations running from August 1990 to
 February, 2004.  The model considered is a QAR(4) model utilizing four
 lags.  We are interested in testing whether the classical location-shift
@@ -652,7 +652,7 @@ of the \R command \texttt{nls} for nonlinear least squares estimation.
 
 To illustrate the use of \texttt{nlrq} consider the problem of
 estimating the quantile functions of the Frank copula model introduced
-in \citeasnoun{K.05}, Section 8.4.  We begin by setting some parameters
+in \citet*{K.05}, Section 8.4.  We begin by setting some parameters
 and generating data from the Frank model:
 
 <<label = Frank>>=
@@ -808,8 +808,8 @@ it could be added as a parametric component using the usual \texttt{formula} syn
 \vspace{2mm}
 \noindent
 Another appealing approach to nonparametric smoothing involves penalty
-methods. \citeasnoun{KNP.94}  describe total variation penalty methods
-for fitting univariate functions;  \citeasnoun{KM.04},
+methods. \citet*{KNP.94}  describe total variation penalty methods
+for fitting univariate functions;  \citet*{KM.04},
 extend to approach to bivariate function estimation.
 Again, partially linear models are easily adapted, and there are also easy ways to impose
 monotonicity and convexity on the fitted functions.
@@ -829,7 +829,7 @@ from Chapter 7.  The objective is to estimate a model for the
 upper envelope of the scatterplot, a model that would reflect
 best evolutionary practice in mammalian ambulatory efficiency.
 In contrast to the least squares analysis
-of \citeasnoun{Chappell.89} where they are omitted,
+of \citet*{Chappell.89} where they are omitted,
 no special allowance is made for the ``specials'' indicated by
 the plotting character \texttt{s} or ``hoppers'' indicated by
 \texttt{h}.
@@ -868,7 +868,7 @@ function gradient.}
 
 Bivariate nonparametric fitting using the triogram methods described
 in Chapter 7 can be handled in a similar manner.
-If we consider the Cobar mining data from \citeasnoun{gree:silv.94}
+If we consider the Cobar mining data from \citet*{gree:silv.94}
 \begin{figure}
 \begin{center}
 <<label = cobar, fig = TRUE >>=

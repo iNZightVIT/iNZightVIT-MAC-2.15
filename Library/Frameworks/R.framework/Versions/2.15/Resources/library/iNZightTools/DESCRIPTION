@@ -9,4 +9,5 @@ Author: Tom Elliott [aut, cre]
 Maintainer: Tom Elliott <tell029@aucklanduni.ac.nz>
 Description: Contains functions used by various other iNZight packages.
 License: GPL-2
-Built: R 2.15.3; ; 2014-06-16 20:44:14 UTC; unix
+Packaged: 2014-06-16 22:52:28 UTC; tell029
+Built: R 2.15.3; ; 2014-06-16 23:26:48 UTC; unix

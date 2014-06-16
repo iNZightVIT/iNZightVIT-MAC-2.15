@@ -1,8 +1,8 @@
-addLast	addLast
+addLast	gtools-defunct
 ask	ask
-assert	gtools-deprecated
+assert	gtools-defunct
 binsearch	binsearch
-capture	capture
+capture	gtools-defunct
 checkRVersion	checkRVersion
 combinations	combinations
 ddirichlet	dirichlet
@@ -11,10 +11,13 @@ ELISA	ELISA
 even	oddeven
 foldchange	foldchange
 foldchange2logratio	foldchange
+getDependencies	getDependencies
+gtools-defunct	gtools-defunct
 gtools-deprecated	gtools-deprecated
 inv.logit	logit
 invalid	invalid
 keywords	keywords
+lastAdd	lastAdd
 logit	logit
 logratio2foldchange	foldchange
 mixedorder	mixedsort
@@ -28,5 +31,6 @@ running	running
 scat	scat
 setTCPNoDelay	setTCPNoDelay
 smartbind	smartbind
-sprint	capture
+sprint	gtools-defunct
+stars.pval	stars.pval
 strmacro	defmacro

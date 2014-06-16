@@ -1,6 +1,5 @@
 Package: cairoDevice
-Version: 2.19
-Date: 2011/09/16
+Version: 2.20
 Title: Cairo-based cross-platform antialiased graphics device driver.
 Author: Michael Lawrence
 Depends: R (>= 2.12.0)
@@ -16,8 +15,9 @@ Acknowledgements: Lyndon Drake (based on gtkDevice), Brian Ripley
         (updates for R 2.7), Mikhail Kondrin (Adobe->UTF8 translation),
         Duncan Murdoch (updates for R 2.12)
 License: GPL
-Packaged: 2011-10-24 13:03:41 UTC; larman
+Packaged: 2014-02-22 19:46:45 UTC; larman
+NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2011-10-24 13:37:51
-Built: R 2.15.0; universal-apple-darwin9.8.0; 2012-04-01 04:10:27 UTC; unix
-Archs: i386, ppc, x86_64
+Date/Publication: 2014-02-22 22:12:15
+Built: R 2.15.3; universal-apple-darwin9.8.0; 2014-03-18 22:36:38 UTC; unix
+Archs: i386, x86_64

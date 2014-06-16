@@ -1171,3 +1171,34 @@ hopefully is a very rare occurrence.
 3.  Changed Curv to return a type object, to fix a bug introduced into the 
 Powell methods when I added ctype for left censoring for Portnoy and
 PengHuang.  Thanks to Mike Smithson for reporting this.
+
+4.98
+
+1.  Fixed a plethora of places that the new dimension checking for fortran
+arrays identified issues.  
+
+5.00 
+
+1.  Fixed several places with excessive line lengths in the .Rd files.
+
+2.  Purged the econometrica.bst bib style, as requested by Brian R.
+
+5.04
+
+1.  Fixed logLik.nlrq bug as noted by Erin Graham.
+2.  Changed the default bootstrap method for crq objects to the delete-d 
+jackknife method proposed recently by Portnoy.  This seems to work better
+especially when, as is ofter the case the process is "defective."
+3.  Fixed predict.crq so it would return fitted values when newdata was
+omitted, bug report by Carles Forné Izquierdo.
+
+5.05
+
+1.  BDR suggested a fix to dynrq to avoid a ":::" usage.  This led to
+some adventures in environments that eventually led to inclusion of a model
+component in the first element of dynrqs objects so that plotting of
+summary.dynrqs objects could find the appropriate design matrix.
+
+2.  And in addition the Description file was augmented with a greatly
+expanded authors component -- which should have been done years ago
+but was greatly facilitated by the (relatively) new person() function.

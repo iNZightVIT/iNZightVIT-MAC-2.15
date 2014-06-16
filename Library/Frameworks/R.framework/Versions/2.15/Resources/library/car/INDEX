@@ -73,6 +73,7 @@ compareCoefs            Print estimated coefficients and their standard
 crPlots                 Component+Residual (Partial Residual) Plots
 deltaMethod             Estimate and Standard Error of a Nonlinear
                         Function of Estimated Regression Coefficients
+densityPlot             Nonparametric Density Estimates
 dfbetaPlots             dfbeta and dfbetas Index Plots
 durbinWatsonTest        Durbin-Watson Test for Autocorrelated Errors
 ellipse                 Ellipses, Data Ellipses, and Confidence

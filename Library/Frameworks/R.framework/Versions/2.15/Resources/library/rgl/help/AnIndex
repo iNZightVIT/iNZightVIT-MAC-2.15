@@ -1,4 +1,5 @@
 rgl-package	rgl-package
+.check3d	check3d
 abclines3d	abclines
 addNormals	addNormals
 addNormals.mesh3d	addNormals
@@ -12,6 +13,7 @@ bbox3d	bbox
 bg3d	bg
 box3d	axes3d
 clear3d	scene
+clipplanes3d	planes
 cube3d	mesh3d
 cube3d.ib	rgl-internal
 cube3d.vb	rgl-internal
@@ -32,8 +34,11 @@ ellipse3d.default	ellipse3d
 ellipse3d.glm	ellipse3d
 ellipse3d.lm	ellipse3d
 ellipse3d.nls	ellipse3d
+extrude3d	extrude3d
+getr3dDefaults	par3d
 grid3d	grid3d
 icosahedron3d	mesh3d
+identify3d	identify3d
 identityMatrix	matrices
 light3d	light
 lines3d	3dobjects
@@ -61,6 +66,7 @@ plot3d.mesh3d	plot3d
 plot3d.rglobject	scene3d
 plot3d.rglscene	scene3d
 points3d	3dobjects
+polygon3d	polygon3d
 pop3d	scene
 print.rglobject	scene3d
 print.rglscene	scene3d
@@ -81,9 +87,11 @@ rgl.bool	rgl-internal
 rgl.bringtotop	rgl.bringtotop
 rgl.clamp	rgl-internal
 rgl.clear	scene
+rgl.clipplanes	planes
 rgl.close	rgl-package
 rgl.color	rgl-internal
 rgl.cur	rgl-package
+rgl.dev.list	rgl-package
 rgl.enum	rgl-internal
 rgl.enum.fogtype	rgl-internal
 rgl.enum.gl2ps	rgl-internal
@@ -115,7 +123,7 @@ rgl.projection	rgl.user2window
 rgl.quads	primitive
 rgl.quit	rgl-package
 rgl.range	rgl-internal
-rgl.select	rgl-internal
+rgl.select	rgl.select
 rgl.select3d	select3d
 rgl.selectstate	rgl-internal
 rgl.set	rgl-package
@@ -129,6 +137,7 @@ rgl.Sweave	rgl.Sweave
 rgl.Sweave.off	rgl.Sweave
 rgl.texts	texts
 rgl.triangles	primitive
+rgl.useNULL	rgl.useNULL
 rgl.user2window	rgl.user2window
 rgl.vertex	rgl-internal
 rgl.viewpoint	viewpoint
@@ -167,6 +176,8 @@ transform3d	matrices
 translate3d	matrices
 translationMatrix	matrices
 triangles3d	3dobjects
+triangulate	triangulate
+turn3d	turn3d
 view3d	viewpoint
 wire3d	mesh3d
 wire3d.mesh3d	mesh3d
