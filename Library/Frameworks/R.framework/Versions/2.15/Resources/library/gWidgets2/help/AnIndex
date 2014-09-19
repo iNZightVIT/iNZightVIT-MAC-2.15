@@ -96,6 +96,8 @@ addHandlerColumnDoubleclicked	gWidgets-handlers
 addHandlerColumnDoubleclicked.default	gWidgets-handlers
 addHandlerColumnRightclicked	gWidgets-handlers
 addHandlerColumnRightclicked.default	gWidgets-handlers
+addHandlerControlclick	gWidgets-handlers
+addHandlerControlclick.default	gWidgets-handlers
 addHandlerDestroy	gWidgets-handlers
 addHandlerDestroy.default	gWidgets-handlers
 addHandlerDoubleclick	gWidgets-handlers
@@ -116,6 +118,8 @@ addHandlerSelect	gWidgets-handlers
 addHandlerSelect.default	gWidgets-handlers
 addHandlerSelectionChanged	gWidgets-handlers
 addHandlerSelectionChanged.default	gWidgets-handlers
+addHandlerShiftclick	gWidgets-handlers
+addHandlerShiftclick.default	gWidgets-handlers
 addHandlerUnrealize	gWidgets-handlers
 addHandlerUnrealize.default	gWidgets-handlers
 addPopupMenu	gWidgets-handlers
@@ -305,6 +309,7 @@ svalue<-.GGroup	ggroup
 svalue<-.GHtml	ghtml
 svalue<-.GLabel	glabel
 svalue<-.GMenuBar	gmenu
+svalue<-.GNotebook	gnotebook
 svalue<-.GRadio	gradio
 svalue<-.GToolBar	gtoolbar
 svalue<-.GTree	gtree
@@ -342,6 +347,7 @@ XXX	XXX
 [.GEdit	gWidgets2-S3methods
 [.GFilter	gfilter
 [.GLayout	glayout
+[.GNotebook	gnotebook
 [.GTable	gtable
 [.GTree	gtree
 [<-.GCheckbox	gcheckbox
