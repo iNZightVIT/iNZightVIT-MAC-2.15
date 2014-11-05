@@ -12,7 +12,7 @@ If you have already attempted to use the older version, you will need to install
 (Even if you have already installed 2.18, you will need to reinstall it so R uses this version instead of 2.24).
 
 
-Once this is done, you can [download the iNZightVIT](https://github.com/iNZightVIT/iNZightVIT-MAC-2.15/archive/master.zip).
+Once this is done, you can [download  iNZightVIT](https://github.com/iNZightVIT/iNZightVIT-MAC-2.15/archive/master.zip).
 
 -----
 
