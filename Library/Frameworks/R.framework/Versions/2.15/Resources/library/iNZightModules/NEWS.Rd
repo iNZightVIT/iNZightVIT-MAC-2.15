@@ -2,7 +2,39 @@
 \title{Change Log for iNZightModules}
 \encoding{UTF-8}
 
-\section{Changes in version 1.0.4}{
+\section{Changes in version 1.0.8}{
+  Release date: 18 March 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix a bug where iNZightTS wasn't being imported properly
+    }
+  }
+}
+
+\section{Changes in version 1.0.7}{
+  Release date: 23 February 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item remove RGL from NAMESPACE completely
+    }
+  }
+}
+
+\section{Changes in version 1.0.6}{
+  Release date: 04 February 2015
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item fix an issue where RGL causes R on some Windows 8 machines to crash
+    }
+  }
+}
+
+\section{Changes in version 1.0.5}{
+  Release date: 27 November 2014
+  
   \subsection{MINOR CHANGES}{
     \itemize{
       \item add scrollbars to Time Series window if it doesn't fit on

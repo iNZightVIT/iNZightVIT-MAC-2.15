@@ -2,6 +2,55 @@
 \title{Change Log for iNZight}
 \encoding{UTF-8}
 
+\section{Changes in version 2.1}{
+  Release date: to be confirmed
+
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item New hexagonal binning plot available to large samples
+
+      \item Live updating sliders for the "Add to Plot" panel, which is
+      now embedded into the main window rather than creating an
+      additional pop-up window
+    }
+  }
+
+  \subsection{MAJOR CHANGES}{
+    \itemize{
+      \item The "Add to Plot", "Remove Additions" and
+      "Inference Information" windows have been integrated into the main
+      window with the aim of making the interface cleaner and easier to
+      navigate.
+      
+      \item The plotting package has been rewritten to accomodate survey
+      designs (this will be integrated with iNZight itself at a later
+      date). However, the plots have been modified to be cleaner and far
+      more efficient. Additionally, the algorithms used for the
+      inference information have been updated. For more information on
+      this, see the iNZightPlots change log.
+
+      \item The "Get Summary" and "Get Inference" outputs have been
+      redesigned to hopefully give a more intuitive, cleaner
+      presentation of the information. 
+    }
+  }
+
+  \subsection{MINOR CHANGES}{
+    \itemize{
+      \item missing values are now displayed on the plot
+
+      \item many other small UI improvements
+    }
+  }
+
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item many bug fixes in both iNZight and the plots. As this is a
+      big rewrite, we don't list them here.
+    }
+  }
+}
+
 \section{Changes in version 2.0.4}{
   Release date: 18 November 2014
   
@@ -45,6 +94,22 @@
 
     \itemize{
       \item fixed up the plot device in Time Series on Linux machines
+    }
+  }
+
+  \subsection{Patch 2.0.4-3}{
+    Date: 10-02-2015
+
+    \itemize{
+      \item fix a bug causing write-protected directories to crash
+    }
+  }
+
+  \subsection{Patch 2.0.4-4}{
+    Date: 10-03-2015
+
+    \itemize{
+      \item ping for an internet connection before trying to check for updates
     }
   }
 }

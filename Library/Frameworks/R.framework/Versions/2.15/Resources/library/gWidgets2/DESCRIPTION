@@ -26,4 +26,4 @@ Collate: 'misc.R' 'guiToolkit.R' 'BasicInterface.R'
        'gtimer.R' 'gtoolbar.R' 'gtree.R' 'ws-model.R'
        'gvarbrowser.R' 'gwindow.R' 'handler-methods.R'
        'icons.R'
-Built: R 2.15.3; ; 2014-12-11 22:00:55 UTC; unix
+Built: R 3.0.2; ; 2015-04-20 22:01:07 UTC; unix
