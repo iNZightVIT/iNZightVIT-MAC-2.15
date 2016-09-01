@@ -1,5 +1,9 @@
 iNZightVIT for MAC
 ==================
+
+__REDUNDANT: only here in case we need it again for some reason__. Check out [iNZightVIT/iNZightVIT-osx-installer](https://github.com/iNZightVIT/iNZightVIT-osx-installer).
+
+
 This version is build using older versions of packages, and is for users running OS X 10.6 or lower (although not guaranteed on lower versions).
 
 If you are running 10.9.2 (Mavericks), please use iNZightVIT-MAC from:
